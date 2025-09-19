@@ -1,4 +1,4 @@
-import { getNetlifyContext } from 'utils';
+import { getNetlifyContext } from 'lib/server-utils';
 import { Alert } from './alert';
 import { Markdown } from './markdown';
 

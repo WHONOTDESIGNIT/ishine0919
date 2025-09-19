@@ -3,7 +3,7 @@ import { Card } from 'components/card';
 import { ContextAlert } from 'components/context-alert';
 import { Markdown } from 'components/markdown';
 import { RandomQuote } from 'components/random-quote';
-import { getNetlifyContext } from 'utils';
+import { getNetlifyContext } from 'lib/server-utils';
 
 const contextExplainer = `
 The card below is rendered on the server based on the value of \`process.env.CONTEXT\` 
