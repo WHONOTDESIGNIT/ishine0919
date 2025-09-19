@@ -23,7 +23,9 @@ And as always with dynamic content, beware of layout shifts & flicker! (here, we
 
 const ctx = getNetlifyContext();
 
-export default function Page() {
+export default async function Page() {
+    const ctx = await getNetlifyContext();
+    
     return (
         <div className="flex flex-col gap-12 sm:gap-16">
             <section>
@@ -37,7 +39,7 @@ export default function Page() {
             {!!ctx && (
                 <section className="flex flex-col gap-4">
                     <Markdown content={contextExplainer} />
-                    <RuntimeContextCard />
+                    <RuntimeContextCard ctx={ctx} />
                 </section>
             )}
             <section className="flex flex-col gap-4">
@@ -49,7 +51,7 @@ export default function Page() {
     );
 }
 
-function RuntimeContextCard() {
+function RuntimeContextCard({ ctx }) {
     const title = `Netlify Context: running in ${ctx} mode.`;
     if (ctx === 'dev') {
         return (
